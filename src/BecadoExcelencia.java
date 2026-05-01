@@ -1,27 +1,28 @@
-public class BecadoExcelencia extends EstudianteBecado{
+public class BecadoExcelencia extends EstudianteBecado {
     private double bonoExcelencia;
 
-    public BecadoExcelencia(String codigo, String nombre, double promedio, double valorMatricula, double bonoExcelencia, double porcentajeBeca){
+    public BecadoExcelencia(String codigo, String nombre, double promedio,
+                            double valorMatricula, double porcentajeBeca, double bonoExcelencia) {
         super(codigo, nombre, promedio, valorMatricula, porcentajeBeca);
-        this.bonoExcelencia=bonoExcelencia;
+        setBonoExcelencia(bonoExcelencia);
+    }
+
+    public void setBonoExcelencia(double bonoExcelencia) {
+        if (bonoExcelencia >= 0) {
+            this.bonoExcelencia = bonoExcelencia;
+        } else {
+            System.out.println("Bono inválido");
+        }
     }
 
     public double getBonoExcelencia() {
         return bonoExcelencia;
     }
 
-    public void setBonoExcelencia(double bonoExcelencia) {
-        if (bonoExcelencia < 0) {
-            System.out.println("El bono no puede ser negativo");
-        } else {
-            this.bonoExcelencia = bonoExcelencia;
-        }
-    }
-
     @Override
     public double calcularPagoFinal() {
         double pago = super.calcularPagoFinal();
-        pago -= getBonoExcelencia();
+        pago -= bonoExcelencia;
 
         if (pago < 0) pago = 0;
 

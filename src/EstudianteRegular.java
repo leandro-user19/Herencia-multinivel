@@ -1,27 +1,26 @@
-public class EstudianteRegular extends Estudiante{
+public class EstudianteRegular extends Estudiante {
     private int numeroMaterias;
 
-
-    public EstudianteRegular(String codigo, String nombre, double promedio, double valorMatricula, int numeroMaterias){
+    public EstudianteRegular(String codigo, String nombre, double promedio,
+                             double valorMatricula, int numeroMaterias) {
         super(codigo, nombre, promedio, valorMatricula);
-        this.numeroMaterias=numeroMaterias;
+        setNumeroMaterias(numeroMaterias);
     }
 
     public void setNumeroMaterias(int numeroMaterias) {
         if (numeroMaterias > 0) {
-            this.numeroMaterias=numeroMaterias;
+            this.numeroMaterias = numeroMaterias;
         } else {
-            System.out.println("Número de materias no aceptado");
+            System.out.println("Número de materias inválido");
         }
     }
 
     public int getNumeroMaterias() {
-        return numeroMaterias*10;
+        return numeroMaterias;
     }
 
     @Override
     public double calcularPagoFinal() {
-        return getValorMatricula() + getNumeroMaterias();
+        return getValorMatricula() + (numeroMaterias * 10);
     }
-
 }
