@@ -8,9 +8,9 @@ public class EstudianteRegular extends Estudiante{
     }
 
     public double setNumeroMaterias(int numeroMaterias) {
-        if(numeroMaterias>0){
-            return numeroMaterias*10;
-        }else{
+        if (numeroMaterias > 0) {
+            return numeroMaterias * 10;
+        } else {
             System.out.println("Número de materias no aceptado");
         }
         return 0;

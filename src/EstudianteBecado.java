@@ -6,8 +6,8 @@ public class EstudianteBecado extends Estudiante {
         this.porcentajeBeca=porcentajeBeca;
     }
 
-    public double calcularPorcentajeBeca(){
-        return setPorcentajeBeca(getPorcentajeBeca())/100 *getPromedio();
+    public double calcularPorcentajeBeca() {
+        return setPorcentajeBeca(getPorcentajeBeca()) / 100 * getPromedio();
     }
 
     @Override
