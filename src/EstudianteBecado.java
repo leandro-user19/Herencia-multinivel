@@ -7,7 +7,7 @@ public class EstudianteBecado extends Estudiante {
     }
 
     public double calcularPorcentajeBeca() {
-        return setPorcentajeBeca(getPorcentajeBeca()) / 100 * getPromedio();
+        return getPorcentajeBeca() * getPromedio();
     }
 
     @Override
@@ -16,15 +16,16 @@ public class EstudianteBecado extends Estudiante {
     }
 
     public double getPorcentajeBeca() {
-        return porcentajeBeca;
+        return porcentajeBeca/100;
     }
 
-    public double setPorcentajeBeca(double porcentajeBeca) {
+    public void setPorcentajeBeca(double porcentajeBeca) {
         if(porcentajeBeca>0 && porcentajeBeca<100){
-            return porcentajeBeca/100;
+            this.porcentajeBeca=porcentajeBeca;
         }else{
             System.out.println("Porcentaje de beca no admitido");
         }
-        return 0;
     }
+
+
 }

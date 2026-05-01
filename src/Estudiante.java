@@ -25,11 +25,6 @@ public abstract class Estudiante {
 
     public abstract double calcularPagoFinal();
 
-    public double calcularPagoFinal(double descuentoExtra){
-        return calcularPagoFinal()*descuentoExtra;
-    }
-
-
     public double getPromedio() {
         return promedio;
     }
